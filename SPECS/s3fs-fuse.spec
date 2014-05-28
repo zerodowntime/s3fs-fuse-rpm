@@ -17,6 +17,7 @@ Requires:	openssl >= 0.9
 
 BuildRequires:  fuse-devel, curl-devel, libxml2-devel
 BuildRequires:  openssl-devel, mailcap
+BuildRequires:	automake, gcc-c++
 Conflicts:      fuse-s3fs
 Obsoletes:	s3fs
 
