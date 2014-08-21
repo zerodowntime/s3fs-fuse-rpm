@@ -37,7 +37,7 @@ Clone the repo:
 Build fuse-2.8.5 RPMs
 ---------------------
 
-If you do not have fuse >= 2.8.4 available, then you may compile 2.8.5 using [fuse-2.8.5-99.vitki.01.el5.src.rpm](https://rpm.vitki.net/pub/SRPMS/fuse-2.8.5-99.vitki.01.el5.src.rpm) from [rpm.vitki.net](https://rpm.vitki.net/pub/SRPMS/)
+If you do not have fuse >= 2.8.4 available, then you may compile 2.8.5 using [fuse-2.8.5-99.vitki.01.el5.src.rpm](https://rpm.vitki.net/pub/centos/6/source/fuse-2.8.5-99.vitki.01.el5.src.rpm) from [rpm.vitki.net](https://rpm.vitki.net/pub/centos/6/source/)
 
 Otherwise, you do not need this step, but install fuse-devel for your system.
 
