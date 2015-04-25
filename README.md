@@ -14,6 +14,7 @@ Requirements
 ------------
 
 * Kernel-devel packages (or kernel source) installed that is the SAME version of your running kernel
+* automake
 * LibXML2-devel packages
 * CURL-devel packages (or compile curl from sources at: curl.haxx.se/ use 7.15.X)
 * GCC, GCC-C++
@@ -21,6 +22,7 @@ Requirements
 * FUSE (>= 2.8.4)
 * FUSE Kernel module installed and running (RHEL 4.x/CentOS 4.x users - read below)
 * OpenSSL-devel (0.9.8)
+* MAKEDEV
 * Git
 * rpmbuild
 
