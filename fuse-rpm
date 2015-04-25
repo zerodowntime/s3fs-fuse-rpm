@@ -1,7 +1,8 @@
 #!/bin/bash
-if [ ! -f './SRPMS/fuse-2.8.5-99.vitki.01.el5.src.rpm' ]; then
-  wget --no-check-certificate 'https://rpm.vitki.net/pub/centos/6/source/fuse-2.8.5-99.vitki.01.el5.src.rpm' -O './SRPMS/fuse-2.8.5-99.vitki.01.el5.src.rpm'
+VERSION='2.8.5'
+if [ ! -f "./SOURCES/fuse-${VERSION}.tar.gz" ]; then
+  wget "http://downloads.sourceforge.net/fuse/fuse-${VERSION}.tar.gz" -O "./SOURCES/fuse-${VERSION}.tar.gz"
 fi
-rpmbuild --define "_topdir `pwd`" --rebuild 'SRPMS/fuse-2.8.5-99.vitki.01.el5.src.rpm'
+rpmbuild --define "_topdir `pwd`" -ba 'SPECS/fuse-vitki.spec'
 echo Your packages are available at $PWD/RPMS
 
