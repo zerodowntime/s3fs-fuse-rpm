@@ -1,4 +1,0 @@
-* Remove all binaries, including fuse SRPMs (RPM now to be created from a SPEC file) <Julio Gonzalez Gil>
-* Update to s3fs-fuse 1.77 <Julio Gonzalez Gil>
-* Initial commit <Corey Gilmore>
-* Initial commit <Corey Gilmore>
