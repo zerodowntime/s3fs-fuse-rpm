@@ -57,7 +57,7 @@ Build the s3fs-fuse RPMs
 
 Build the RPMs:
 
-    ./s3fs-fuse-rpm
+    ./s3fs-build-rpm
 
 And install:
 
