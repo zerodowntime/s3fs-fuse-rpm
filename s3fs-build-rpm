@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION='1.78'
+VERSION='1.79'
 if [ ! -f "./SOURCES/s3fs-fuse-${VERSION}.tar.gz" ]; then
   wget "https://github.com/s3fs-fuse/s3fs-fuse/archive/v${VERSION}.tar.gz" -O "./SOURCES/s3fs-fuse-${VERSION}.tar.gz"
   if [ $? -ne 0 ]; then
