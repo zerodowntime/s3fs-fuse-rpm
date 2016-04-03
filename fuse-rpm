@@ -1,7 +1,7 @@
 #!/bin/bash
 VERSION='2.8.5'
 if [ ! -f "./SOURCES/fuse-${VERSION}.tar.gz" ]; then
-  wget "http://downloads.sourceforge.net/fuse/fuse-${VERSION}.tar.gz" -O "./SOURCES/fuse-${VERSION}.tar.gz"
+  wget "https://github.com/libfuse/libfuse/archive/fuse_$(echo ${VERSION} | tr '.' '_').zip" -O "./SOURCES/fuse-${VERSION}.tar.gz"
   if [ $? -ne 0 ]; then
     echo "Could not download fuse-${VERSION}.tar.gz! Check log!"
     exit 1
