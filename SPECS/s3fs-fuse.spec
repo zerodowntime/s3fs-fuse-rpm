@@ -1,5 +1,5 @@
 Name:           s3fs-fuse
-Version:        1.79
+Version:        1.80
 Release:        1%{?dist}
 Summary:        FUSE-based file system backed by Amazon S3
 Group:          System Environment/Base
@@ -40,7 +40,6 @@ rsync backup to s3.
 ./autogen.sh
 %configure
 make %{?_smp_mflags}
-sed -i 's/\r//' README
 
 
 %install
@@ -51,10 +50,13 @@ cp -p %{SOURCE1} passwd-s3fs
 %files
 %{_bindir}/s3fs
 %{_mandir}/man1/s3fs.1*
-%doc AUTHORS README passwd-s3fs
+%doc AUTHORS README.md ChangeLog COPYING passwd-s3fs
 
 
 %changelog
+
+* Thu Jul 30 2015 Julio Gonzalez Gil <git@juliogonzalez.es> - 1.80-1
+- Initial build of 1.80 from https://github.com/s3fs-fuse/s3fs-fuse
 
 * Thu Jul 30 2015 Julio Gonzalez Gil <git@juliogonzalez.es> - 1.79-1
 - Initial build of 1.78 from https://github.com/s3fs-fuse/s3fs-fuse

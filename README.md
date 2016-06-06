@@ -7,24 +7,35 @@ Based off the [spec file](http://kad.fedorapeople.org/packages/s3fs/s3fs.spec) c
 
 Includes scripts to create RPMs for fuse-2.8.5 if needed.
 
-Tested on x64 CentOS 6.4 and Amazon Linux 2014.03
+Tested on x64 CentOS 6.7 and 7.1
 
 
-Requirements
-------------
+Build Requirements
+------------------
+
+All cases:
+
+* automake
+* make
+* git
+* wget
+* rpm-build
+
+fuse 2.85 (if you need to compile it):
 
 * Kernel-devel packages (or kernel source) installed that is the SAME version of your running kernel
-* automake
-* LibXML2-devel packages
-* CURL-devel packages (or compile curl from sources at: curl.haxx.se/ use 7.15.X)
-* GCC, GCC-C++
-* pkgconfig
-* FUSE (>= 2.8.4)
-* FUSE Kernel module installed and running (RHEL 4.x/CentOS 4.x users - read below)
-* OpenSSL-devel (0.9.8)
-* MAKEDEV
-* Git
-* rpmbuild
+* gcc
+* libselinux-devel
+* libtool
+* gettext-devel
+
+s3fs:
+
+* fuse-devel (>= 2.8.4, from your distribution, or from this repository)
+* gcc-c++
+* libcurl-devel
+* libxml2-devel
+* openssl-devel
 
 
 Building fresh RPMs
@@ -41,7 +52,7 @@ Build fuse-2.8.5 RPMs
 
 **WARNING**: Because fuse developers migrated from SourceForge to GitHub and deleted all content from SourceForge, the script and the SPEC to build fuse will not work before commit **daf3c1f**. If you are trying to build an old s3fs version (1.79 or older), please build fuse using commit **daf3c1f** or newer.
 
-If you do not have fuse >= 2.8.4 available, then you may compile 2.8.5 using my fork of [fuse-2.8.5-99.vitki.01.el5.src.rpm](http://rpm.vitki.net/pub/centos/6/source/fuse-2.8.5-99.vitki.01.el5.src.rpm).
+If you do not have fuse >= 2.8.4 available (which for example is the case for CentOS 6.x), then you may compile 2.8.5 using my fork of [fuse-2.8.5-99.vitki.01.el5.src.rpm](http://rpm.vitki.net/pub/centos/6/source/fuse-2.8.5-99.vitki.01.el5.src.rpm).
 
 Otherwise, you do not need this step, but install fuse-devel and fuse-libs for your system.
 
@@ -63,4 +74,4 @@ Build the RPMs:
 
 And install:
 
-    rpm -Uvh RPMS/$HOSTTYPE/s3fs-fuse-1.79-1.*.$HOSTTYPE.rpm
+    rpm -Uvh RPMS/$HOSTTYPE/s3fs-fuse-1.80-1.*.$HOSTTYPE.rpm
