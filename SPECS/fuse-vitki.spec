@@ -1,5 +1,5 @@
 
-%define vitver  02
+%define vitver  03
 %define rhver   %((head -1 /etc/redhat-release 2>/dev/null || echo 0) | tr -cd 0-9 | cut -c1)
 %define relver  99.vitki.%{vitver}%{?dist}%{!?dist:.el%{rhver}}
 
@@ -10,8 +10,8 @@ Summary:        File System in Userspace (FUSE) utilities
 
 Group:          System Environment/Base
 License:        GPL+
-URL:            http://fuse.sf.net
-Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+URL:            https://github.com/libfuse
+Source0:        https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/%{name}-%{version}.tar.gz
 Source1:        fuse-udev.nodes
 Source2:        fuse-makedev.d-fuse
 
@@ -21,7 +21,7 @@ Patch2:         fusermount.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:       kernel >= 2.6.14
 Requires:       which
-BuildRequires:  libselinux-devel
+BuildRequires:  libselinux-devel, libtool, gettext-devel
 
 Requires(pre): shadow-utils
 Requires(post): MAKEDEV
@@ -57,14 +57,16 @@ pgk-config) to develop FUSE based applications/filesystems.
 
 
 %prep
-%setup -q
+%setup -q -n libfuse-fuse_2_8_5
 #disable device creation during build/install
-sed -i 's|mknod|echo Disabled: mknod |g' util/Makefile.in
+sed -i 's|mknod|echo Disabled: mknod |g' util/Makefile.am
 %patch0 -p0 -b .patch0
 %patch1 -p0 -b .patch1
 %patch2 -p0 -b .patch2
 
 %build
+touch config.rpath
+./makeconf.sh
 # Can't pass --disable-static here, or else the utils don't build
 %configure \
  --disable-kernel-module \
@@ -147,6 +149,9 @@ fi
 %{_includedir}/fuse
 
 %changelog
+* Mon Jun 06 2016 Julio Gonzalez Gil <git@juliogonzalez.es> 2.8.5-03
+- Fix package building for new fuse hosting at GitHub
+
 * Sat Apr 25 2015 Julio Gonzalez Gil <git@juliogonzalez.es> 2.8.5-02
 - Include a patch to fix compilation problems
   for details see http://sourceforge.net/p/fuse/fuse/ci/655794
