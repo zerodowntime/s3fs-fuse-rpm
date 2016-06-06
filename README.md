@@ -39,6 +39,8 @@ Clone the repo:
 Build fuse-2.8.5 RPMs
 ---------------------
 
+**WARNING**: Because fuse developers migrated from SourceForge to GitHub and deleted all content from SourceForge, the script and the SPEC to build fuse will not work before commit **daf3c1f**. If you are trying to build an old s3fs version (1.79 or older), please build fuse using commit **daf3c1f** or newer.
+
 If you do not have fuse >= 2.8.4 available, then you may compile 2.8.5 using my fork of [fuse-2.8.5-99.vitki.01.el5.src.rpm](http://rpm.vitki.net/pub/centos/6/source/fuse-2.8.5-99.vitki.01.el5.src.rpm).
 
 Otherwise, you do not need this step, but install fuse-devel and fuse-libs for your system.
