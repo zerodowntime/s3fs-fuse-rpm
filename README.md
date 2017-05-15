@@ -1,6 +1,8 @@
 s3fs-fuse
 =========
 
+[![Build Status](https://jenkins.juliogonzalez.es/job/s3fs-fuse-rpm-build/badge/icon)](https://jenkins.juliogonzalez.es/job/s3fs-fuse-rpm-build/)
+
 CentOS/RH/Amazon RPMs for S3FS-Fuse <https://github.com/s3fs-fuse/s3fs-fuse>
 
 Based off the [spec file](http://kad.fedorapeople.org/packages/s3fs/s3fs.spec) created by [Jorge A Gallegos](http://kad.fedorapeople.org/), referenced at <https://bugzilla.redhat.com/show_bug.cgi?id=725292>, and upgraded by [Corey Gilmore](https://github.com/cfg), refered at <https://github.com/cfg/s3fs>
