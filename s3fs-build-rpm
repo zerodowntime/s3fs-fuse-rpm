@@ -1,15 +1,15 @@
 #!/bin/bash
 VERSION='1.80'
 if [ ! -f "./SOURCES/s3fs-fuse-${VERSION}.tar.gz" ]; then
-  wget "https://github.com/s3fs-fuse/s3fs-fuse/archive/v${VERSION}.tar.gz" -O "./SOURCES/s3fs-fuse-${VERSION}.tar.gz"
+  curl -s -L "https://github.com/s3fs-fuse/s3fs-fuse/archive/v${VERSION}.tar.gz" -o "./SOURCES/s3fs-fuse-${VERSION}.tar.gz"
   if [ $? -ne 0 ]; then
     echo "Could not download fuse-${VERSION}.tar.gz! Check log!"
     exit 1
   fi
 fi
-rpmbuild --define "_topdir `pwd`" -ba 'SPECS/s3fs-fuse.spec'
+rpmbuild --quiet --define "_topdir `pwd`" -ba 'SPECS/s3fs-fuse.spec'
 if [ $? -eq 0 ]; then
-  echo "Your packages are available at $PWD/RPMS."
+  echo "Your packages are available at ${PWD}/RPMS."
   exit 0
 else
   echo "There are errors. Check log!"

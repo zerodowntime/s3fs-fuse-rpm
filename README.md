@@ -7,7 +7,7 @@ Based off the [spec file](http://kad.fedorapeople.org/packages/s3fs/s3fs.spec) c
 
 Includes scripts to create RPMs for fuse-2.8.5 if needed.
 
-Tested on x64 CentOS 6.7 and 7.1
+Tested on x64 CentOS 6.9, CentOS 7.3 and Amazon Linux 2017.03
 
 
 Build Requirements
@@ -18,12 +18,12 @@ All cases:
 * automake
 * make
 * git
-* wget
+* curl
 * rpm-build
 
 fuse 2.85 (if you need to compile it):
 
-* Kernel-devel packages (or kernel source) installed that is the SAME version of your running kernel
+* kernel-devel packages (or kernel source) installed that is the SAME version of your running kernel
 * gcc
 * libselinux-devel
 * libtool
@@ -43,8 +43,8 @@ Building fresh RPMs
 
 Clone the repo: 
 
-    git@github.com:juliogonzalez/s3fs-rpm.git
-    cd s3fs-rpm
+    git@github.com:juliogonzalez/s3fs-fuse-rpm.git
+    cd s3fs-fuse-rpm
 
 
 Build fuse-2.8.5 RPMs
@@ -62,7 +62,7 @@ Rebuild:
 
 And install
 
-    rpm -Uvh RPMS/$HOSTTYPE/fuse-2.8.5-99.vitki.03.*.$HOSTTYPE.rpm RPMS/$HOSTTYPE/fuse-devel-2.8.5-99.vitki.02.*.$HOSTTYPE.rpm RPMS/$HOSTTYPE/fuse-libs-2.8.5-99.vitki.03.*.$HOSTTYPE.rpm
+    rpm -Uvh RPMS/$HOSTTYPE/fuse-2.8.5-99.vitki.03.*.$HOSTTYPE.rpm RPMS/$HOSTTYPE/fuse-devel-2.8.5-99.vitki.03.*.$HOSTTYPE.rpm RPMS/$HOSTTYPE/fuse-libs-2.8.5-99.vitki.03.*.$HOSTTYPE.rpm
 
 
 Build the s3fs-fuse RPMs
