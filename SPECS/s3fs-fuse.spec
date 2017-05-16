@@ -1,5 +1,5 @@
 Name:           s3fs-fuse
-Version:        1.81
+Version:        1.82
 Release:        1%{?dist}
 Summary:        FUSE-based file system backed by Amazon S3
 Group:          System Environment/Base
@@ -11,6 +11,7 @@ Source1:        passwd-s3fs
 
 
 Requires:	fuse >= 2.8.4
+Requires:       fuse-libs >= 2.8.4
 Requires:	curl >= 7.0
 Requires:	libxml2 >= 2.6
 Requires:	openssl >= 0.9
@@ -54,6 +55,9 @@ cp -p %{SOURCE1} passwd-s3fs
 
 
 %changelog
+
+* Mon May 16 2017 Julio Gonzalez Gil <git@juliogonzalez.es> - 1.82-1
+- Initial build of 1.82 from https://github.com/s3fs-fuse/s3fs-fuse
 
 * Mon May 16 2017 Julio Gonzalez Gil <git@juliogonzalez.es> - 1.81-1
 - Initial build of 1.81 from https://github.com/s3fs-fuse/s3fs-fuse
