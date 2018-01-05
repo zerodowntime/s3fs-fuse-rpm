@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION='1.82'
+VERSION='1.83'
 if [ ! -f "./SOURCES/s3fs-fuse-${VERSION}.tar.gz" ]; then
   curl -s -L "https://github.com/s3fs-fuse/s3fs-fuse/archive/v${VERSION}.tar.gz" -o "./SOURCES/s3fs-fuse-${VERSION}.tar.gz"
   if [ $? -ne 0 ]; then
