@@ -59,10 +59,10 @@ cp -p %{SOURCE1} passwd-s3fs
 * Fri Jan  5 2018 William Anderson <william.anderson@indicia.com> - 1.83-1
 - Initial build of 1.83 from https://github.com/s3fs-fuse/s3fs-fuse
 
-* Mon May 16 2017 Julio Gonzalez Gil <git@juliogonzalez.es> - 1.82-1
+* Tue May 16 2017 Julio Gonzalez Gil <git@juliogonzalez.es> - 1.82-1
 - Initial build of 1.82 from https://github.com/s3fs-fuse/s3fs-fuse
 
-* Mon May 16 2017 Julio Gonzalez Gil <git@juliogonzalez.es> - 1.81-1
+* Tue May 16 2017 Julio Gonzalez Gil <git@juliogonzalez.es> - 1.81-1
 - Initial build of 1.81 from https://github.com/s3fs-fuse/s3fs-fuse
 
 * Thu Jul 30 2015 Julio Gonzalez Gil <git@juliogonzalez.es> - 1.80-1
