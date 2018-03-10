@@ -43,7 +43,7 @@ s3fs:
 Building fresh RPMs
 -------------------
 
-Clone the repo: 
+Clone the repo:
 
     git@github.com:juliogonzalez/s3fs-fuse-rpm.git
     cd s3fs-fuse-rpm
@@ -76,4 +76,4 @@ Build the RPMs:
 
 And install:
 
-    rpm -Uvh RPMS/$HOSTTYPE/s3fs-fuse-1.82-1.*.$HOSTTYPE.rpm
+    rpm -Uvh RPMS/$HOSTTYPE/s3fs-fuse-1.83-1.*.$HOSTTYPE.rpm
